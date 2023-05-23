@@ -1,141 +1,143 @@
 
 
-// console.log(document)
-// console.log(document.domain);
-// console.log(document.URL)
-// console.log(document.title)
-// // document.title=123
-// console.log(document.head)
-// console.log(document.body)
-// console.log(document.all)
-// console.log(document.doctype)
-// console.log(document.forms)
-// console.log(document.link)
-// console.log(document.images)
+console.log(document)
+console.log(document.domain);
+console.log(document.URL)
+console.log(document.title)
+// document.title=123
+console.log(document.head)
+console.log(document.body)
+console.log(document.all)
+console.log(document.doctype)
+console.log(document.forms)
+console.log(document.link)
+console.log(document.images)
 
-//Get element by id
-// console.log(document.getElementById('header-title'))
+// Get element by id
 
-// let head=document.getElementById('header-title');
-// head.innerText="Good bye"
-// head.textContent="Hello"
-// head.innerHTML='<h1>Chunnu</h1>'
-// head.style.borderBottom="solid 5px red"
+console.log(document.getElementById('header-title'))
 
-//Get element by className
-// let items=document.getElementsByClassName('list-group-item');
+let head=document.getElementById('header-title');
+head.innerText="Good bye"
+head.textContent="Hello"
+head.innerHTML='<h1>Chunnu</h1>'
+head.style.borderBottom="solid 5px red"
 
-// console.log(items)
-// items[1].textContent='hello';
-// items[1].style.fontWeight='bold';
-// // items[1].style.backgroundColor='red';
+// Get element by className
 
-// for(let i=0;i<items.length;i++){
-//     items[i].style.backgroundColor="#f4f4f4"
-// }
+let items=document.getElementsByClassName('list-group-item');
+
+console.log(items)
+items[1].textContent='hello';
+items[1].style.fontWeight='bold';
+// items[1].style.backgroundColor='red';
+
+for(let i=0;i<items.length;i++){
+    items[i].style.backgroundColor="#f4f4f4"
+}
 
 
-//Get element by Tag Name 
-// let li=document.getElementsByTagName('li');
-// console.log(li);
-// console.log(li[2])
-// li[1].textContent='Hello'
-// li[2].textContent='Sun'
-// li[2].style.backgroundColor="red"
-// li[3].style.backgroundColor="yellow"
+// Get element by Tag Name 
+let li=document.getElementsByTagName('li');
+console.log(li);
+console.log(li[2])
+li[1].textContent='Hello'
+li[2].textContent='Sun'
+li[2].style.backgroundColor="red"
+li[3].style.backgroundColor="yellow"
 
-// for(let i=0;i<li.length;i++)
-// {
-//     li[i].style.backgroundColor="#ccc"
-// }
+for(let i=0;i<li.length;i++)
+{
+    li[i].style.backgroundColor="#ccc"
+}
 
 // queryselector
 
-// let header=document.querySelector('#main-header');
+let header=document.querySelector('#main-header');
 
-// header.style.borderBottom='solid 5px red';
-
-
-// let input=document.querySelector('input');
-// input.value='Hello World'
-
-// let submit=document.querySelector('input[type="submit"]');
-// submit.value='SEND'
-
-// let item=document.querySelector('.list-group-item');
-// item.style.color='red';
-
-// let lastitem=document.querySelector('.list-group-item:last-child');
-// lastitem.style.color="blue"
-
-// let seconditem=document.querySelector('.list-group-item:nth-child(2)');
-
-// seconditem.style.color="orange"
-
-// let thirditem=document.querySelector('.list-group-item:nth-child(3)');
-// thirditem.style.color="#f333";
-
-//Query Selector All
-
-// let title=document.querySelectorAll('.title');
-// // console.log(title)
-
-// // title[0].textContent="Hello"
-
-// let odd=document.querySelectorAll('li:nth-child(odd)')
-// let even=document.querySelectorAll('li:nth-child(even)')
-
-// for(let i=0;i<odd.length;i++){
-//     odd[i].style.backgroundColor="red";
-//     even[i].style.backgroundColor="orange"
-// }
+header.style.borderBottom='solid 5px red';
 
 
+let input=document.querySelector('input');
+input.value='Hello World'
 
-// let items=document.querySelector('#items');
+let submit=document.querySelector('input[type="submit"]');
+submit.value='SEND'
 
-//parentElement
+let item=document.querySelector('.list-group-item');
+item.style.color='red';
 
-// console.log(items.parentElement)
+let lastitem=document.querySelector('.list-group-item:last-child');
+lastitem.style.color="blue"
 
-// items.parentElement.style.backgroundColor="red"
+let seconditem=document.querySelector('.list-group-item:nth-child(2)');
 
-// console.log(items.parentElement.parentElement.parentElement)
+seconditem.style.color="orange"
 
-//childNode
+let thirditem=document.querySelector('.list-group-item:nth-child(3)');
+thirditem.style.color="#f333";
 
-// console.log(items.childNodes)
+// Query Selector All
 
-// console.log(items.children)
-// console.log(items.children[1])
-// items.children[1].style.backgroundColor="red"
+let title=document.querySelectorAll('.title');
+// console.log(title)
 
-// let items=document.querySelector('#items');
+// title[0].textContent="Hello"
 
-//FirstChild
+let odd=document.querySelectorAll('li:nth-child(odd)')
+let even=document.querySelectorAll('li:nth-child(even)')
 
-// console.log(items.firstChild)
-
-// console.log(items.childNodes)
-// console.log(items.firstElementChild)
-
-// items.firstElementChild.textContent='Hello'
-
-//lastchild
-// console.log(items.lastChild)
-
-// console.log(items.lastElementChild)
-
-// items.lastElementChild.style.backgroundColor="red"
-
-// console.log(items.nextSibling)
-
-// console.log(items.nextElementSibling)
+for(let i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor="red";
+    even[i].style.backgroundColor="orange"
+}
 
 
-// console.log(items.previousSibling)
 
-// console.log(items.previousElementSibling)
+let items=document.querySelector('#items');
+
+parentElement
+
+console.log(items.parentElement)
+
+items.parentElement.style.backgroundColor="red"
+
+console.log(items.parentElement.parentElement.parentElement)
+
+childNode
+
+console.log(items.childNodes)
+
+console.log(items.children)
+console.log(items.children[1])
+items.children[1].style.backgroundColor="red"
+
+let items=document.querySelector('#items');
+
+FirstChild
+
+console.log(items.firstChild)
+
+console.log(items.childNodes)
+console.log(items.firstElementChild)
+
+items.firstElementChild.textContent='Hello'
+
+lastchild
+console.log(items.lastChild)
+
+console.log(items.lastElementChild)
+
+items.lastElementChild.style.backgroundColor="red"
+
+console.log(items.nextSibling)
+
+console.log(items.nextElementSibling)
+
+
+console.log(items.previousSibling)
+
+console.log(items.previousElementSibling)
 
 // create Element
 
@@ -164,6 +166,10 @@ console.log(newDiv);
 newDiv.style.fontSize='30px';
 
 container.insertBefore(newDiv,h1)
+
+console.log("chunnu")
+
+
 
 
 
