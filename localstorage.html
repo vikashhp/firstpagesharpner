@@ -17,10 +17,15 @@
            <input type="text" id="name" class="form-control">
            <label for="email" class="form-label">Email</label>
            <input type="email" id="email" class="form-control">
+           <label for="number" class="form-label">Phone Number</label>
+           <input type="number" id="number" class="form-control">
    
            <button type="submit" id="submit">Submit</button>
    
        </form>
+       <div id="display">
+
+       </div>
     </div>
 
 </body>
@@ -30,22 +35,33 @@
     let btn=document.querySelector('.form')
 
     btn.addEventListener('submit',storedata)
-    
+    let arr=JSON.parse(localStorage.getItem('data'))||[]
     function storedata(e)
     {
         e.preventDefault();
+        // let return_data=JSON.parse(localStorage.getItem('data')||[]);
         let name=document.getElementById('name').value;
         let email=document.getElementById('email').value;
+        let phone=document.getElementById('number').value;
+        let main_div=document.getElementById('display')
         
         let obj={
-            name,email
+            name,email,phone
         }
-         let strdata=JSON.stringify(obj)
-        localStorage.setItem('data',strdata)
+        arr.push(obj)
+         
+        localStorage.setItem('data',JSON.stringify(arr))
         
+        let div=document.createElement('div');
 
-        let return_data=JSON.parse(localStorage.getItem('data'));
-        console.log(return_data)
+        div.appendChild(document.createTextNode(name));
+        div.appendChild(document.createTextNode(email));
+        div.appendChild(document.createTextNode(phone));
+
+        main_div.appendChild(div)
+
+        
+        // console.log(return_data)
 
 
     }
