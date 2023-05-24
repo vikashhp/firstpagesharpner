@@ -171,9 +171,12 @@
 
 let form=document.getElementById('addform');
 let itemlist=document.getElementById('items');
+let filter=document.getElementById('filter');
+
 
 form.addEventListener('submit',adddata);
 itemlist.addEventListener('click',removeItem);
+filter.addEventListener('keyup',filterItems)
 
 function adddata(e)
 {
@@ -203,6 +206,7 @@ function adddata(e)
     itemlist.appendChild(li);
    
 }
+//Delete items
 
 function removeItem(e){
   if(e.target.classList.contains('delete')){
@@ -212,6 +216,29 @@ function removeItem(e){
     }
   }
 }
+
+// filter items
+function filterItems(e){
+    //get text
+    let text=e.target.value.toLowerCase();
+    //get list
+    let items=itemlist.getElementsByTagName('li');
+    
+    // convert to array
+    Array.from(items).forEach(function(item){
+   
+        let itemname=item.firstChild.textContent;
+        if(itemname.toLocaleLowerCase().indexOf(text)!=-1){
+            item.style.display='block';
+        }else{
+            item.style.display='none'
+        }
+    })
+}
+
+
+
+
 
 
 
