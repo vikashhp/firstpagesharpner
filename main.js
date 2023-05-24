@@ -45,4 +45,11 @@ function Onsubmit(e)
        email.value="";
 
     }
+    let name1=document.querySelector("#name").value;
+
+    let email1=document.querySelector("#email").value;
+    
+    localStorage.setItem('Name',name1);
+    localStorage.setItem('Email',email1);
 }
+
