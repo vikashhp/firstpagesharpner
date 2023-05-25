@@ -62,6 +62,11 @@
         deletebtn.innerText="Delete"
         deletebtn.className='btn btn-danger btn-sm-float-right delete';
 
+        let editbtn=document.createElement('button');
+        editbtn.innerText='Edit';
+        editbtn.className='btn btn-danger btn-sm-float-right edit';
+        editbtn.addEventListener('click',edit)
+
         div.appendChild(document.createTextNode(name));
 
         div.appendChild(document.createTextNode(email));
@@ -69,6 +74,8 @@
         div.appendChild(document.createTextNode(phone));
 
         div.appendChild(deletebtn);
+
+        div.appendChild(editbtn)
 
         deletebtn.addEventListener('click',removeItem)
 
@@ -92,6 +99,15 @@
         localStorage.removeItem('data')
     }
   }
+}
+
+function edit(e)
+{
+   if(e.target.classList.contains('edit')){
+    let li=e.target.parentElement;
+    li.remove()
+    
+   }
 }
 
 
