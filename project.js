@@ -13,52 +13,56 @@ function adddata(e){
     e.preventDefault()
     let expence=document.getElementById('name').value;
     let description=document.getElementById('description').value;
-     li=document.createElement('li')
-    
-    let obj={
-        expence,description
-    }
-    // console.log(obj)
+    let select=document.querySelector('#dept').value;
 
+
+    let obj={
+                expence,description,select
+            }
+
+        arr.push(obj)
+
+        localStorage.setItem('data',JSON.stringify(arr))
+            
+
+    
+    let td1=document.createElement('td');
+    td1.innerText=expence;
+
+    let td2=document.createElement('td');
+    td2.innerText=description;
+
+    let td3=document.createElement('td');
+    td3.innerText=select;
+
+    //DELETE BUTTON
     let deletebtn=document.createElement('button');
     deletebtn.innerText='Delete';
     deletebtn.className='delete'
+    deletebtn.style.backgroundColor='red';
+    deletebtn.style.color='white';
     deletebtn.addEventListener('click',deleteitem)
 
 
-
+    //EDIT BUTTON
+    
     let editbtn=document.createElement('button');
         editbtn.innerText='Edit';
-        editbtn.className='btn btn-danger btn-sm-float-right edit';
-        editbtn.addEventListener('click',edit)
+        editbtn.className='edit';
+        editbtn.style.backgroundColor='blue';
+        editbtn.style.color='white'
+        
 
 
-   li.appendChild(document.createTextNode(expence));
-   li.appendChild(document.createTextNode(description));
-   li.append(deletebtn);
-   li.append(editbtn)
+    let row=document.createElement('tr');
+    row.append(td1,td2,td3,deletebtn,editbtn)
 
-   userdatils.appendChild(li)
-    arr.push(obj)
-
-    localStorage.setItem('data',JSON.stringify(arr))
+    document.querySelector('tbody').append(row)
     
 
 }
 
 function deleteitem(e){
-    if(e.target.classList.contains('delete')){
-        li.remove()
-        localStorage.removeItem('data')
-    };
-
+    e.target.parentNode.remove()  
 }
 
-function edit(e)
-{
-   if(e.target.classList.contains('edit')){
-    let li=e.target.parentElement;
-    li.remove()
-    
-   }
-}

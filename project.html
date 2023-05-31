@@ -13,8 +13,10 @@
             width:50%;
             height: 400px;
             margin-top: 5%;
-
+            background-color: black;
+           color: white;
         }
+    
     </style>
 
 
@@ -30,13 +32,29 @@
                    <input type="number" id="name" class="form-control">
                    <label for="email" class="form-label">Description</label>
                    <input type="text" id="description" class="form-control">
+                   <select name="" id="dept">
+                       <option value="">---</option>
+                         <option value="Movie">Movie</option>
+                         <option value="Travelling">Travelling</option>
+                         <option value="Home">Home</option>
+                         <option value="Food">Food</option>
+                   </select>
                    <button type="submit" id="submit">Add Expences</button>
 
                </form>
 
-               <ul id="users">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Expences</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody id="users">
 
-               </ul>
+                </tbody>
+                </table>
             </div>
         </div>
     </div>
