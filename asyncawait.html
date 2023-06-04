@@ -66,54 +66,124 @@
 
     // Now comes async await
 
-     console.log('Person1 : Shows Ticket');
-    console.log('Person2 : Shows Ticket');
+    //  console.log('Person1 : Shows Ticket');
+    // console.log('Person2 : Shows Ticket');
 
-    const premovie=async ()=> {
+    // const premovie=async ()=> {
       
-        const wbt=new Promise((resolve,reject)=>{
+    //     const wbt=new Promise((resolve,reject)=>{
+    //         setTimeout(()=>{
+    //          resolve('Ticket')
+    //         },3000)
+    //     })
+
+    //     const getPopcorn=new Promise((resolve,reject)=>{
+    //         resolve('Popcorn')
+    //     })
+
+    //     const getbutter=new Promise((resolve,reject)=>{
+    //         resolve('Butter')
+    //     })
+
+    //     let ticket=await wbt;
+
+    //     console.log(`Wife: I have the ${ticket}`);
+    //     console.log('Husband: we should go in');
+    //     console.log('Wife:No I am hungry');
+
+    //     let popcorn=await getPopcorn;
+
+    //     console.log(`Wife: I have the ${popcorn}`);
+    //     console.log('Husband: we should go in');
+    //     console.log('Wife: I need butter on my popcorn');
+
+    //     let butter=await getbutter;
+
+    //     console.log(`Husband: I got some ${butter} on popcorn`);
+    //     console.log('Husband: Anything else darling ?');
+    //     console.log('Wife: lets go we are getting late');
+    //     console.log('Husband: thankyou')
+
+    //     return ticket
+
+    // }
+
+    // premovie().then((m)=>{
+    //     console.log(m)
+    // })
+
+    // console.log('Person4 : Shows Ticket');
+    // console.log('Person5 : Shows Ticket');
+
+      const posts=[{title:'Post1'}]
+
+
+
+     const createposts=async ()=> {
+           
+        const create1stpost=new Promise((resolve,reject)=>{
             setTimeout(()=>{
-             resolve('Ticket')
-            },3000)
+            reject('Pushed 1st post')
+            },5000)
         })
 
-        const getPopcorn=new Promise((resolve,reject)=>{
-            resolve('Popcorn')
-        })
+       let post1
 
-        const getbutter=new Promise((resolve,reject)=>{
-            resolve('Butter')
-        })
+       try{
+        post1=await create1stpost;
+       }catch{
+            post1='sad face'
+       }
+        
 
-        let ticket=await wbt;
+       const create2ndpost=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+          resolve('Pushed 2nd post')
+        },3000)
+       })
 
-        console.log(`Wife: I have the ${ticket}`);
-        console.log('Husband: we should go in');
-        console.log('Wife:No I am hungry');
+       let post2
 
-        let popcorn=await getPopcorn;
+       try{
+        post2= await create2ndpost
+       }catch{
+         post2='Not posted'
+       }
 
-        console.log(`Wife: I have the ${popcorn}`);
-        console.log('Husband: we should go in');
-        console.log('Wife: I need butter on my popcorn');
+       console.log(post2)
 
-        let butter=await getbutter;
 
-        console.log(`Husband: I got some ${butter} on popcorn`);
-        console.log('Husband: Anything else darling ?');
-        console.log('Wife: lets go we are getting late');
-        console.log('Husband: thankyou')
 
-        return ticket
+    //    const create3rdpost=new Promise((resolve,reject)=>{
+    //     setTimeout(()=>{
+    //      resolve('Pushed 3rd post')
+    //     },4000)
+    //    })
 
-    }
+    //    let post3=await create3rdpost;
 
-    premovie().then((m)=>{
-        console.log(m)
-    })
+    //    console.log(post3)
 
-    console.log('Person4 : Shows Ticket');
-    console.log('Person5 : Shows Ticket');
+
+    //    let [pos1,pos2,pos3]= await Promise.all([post1,post2,post3]);
+
+    //    console.log(pos1,pos2,pos3)
+
+
+
+
+        console.log(post1)
+        return post1
+    
+       
+
+     }
+
+  createposts().then((m)=>{
+    console.log(m)
+  })
+
+
 
 
     
