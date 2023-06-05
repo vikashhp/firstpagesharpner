@@ -452,6 +452,119 @@
 // calling()
 
 
+// Why were promises discovered? How are they better than callbacks?
+
+
+//This mess up is call callback hell
+// function buyacar(pt1,pt2){
+//     setTimeout(()=>{
+//     console.log('Buy a car')
+//     pt1(pt2)
+//     },5000)
+// }
+
+
+// function planatrip(rm){
+//     setTimeout(()=>{
+//    console.log('Plan trip to manali')
+//    rm()
+//     },2000)
+// }
+
+// function raechmanali(){
+//     setTimeout(()=>{
+//    console.log('Reached manali')
+//     },1000)
+// }
+
+// // buyacar()
+// // planatrip()
+
+// buyacar(planatrip,raechmanali)
+
+
+
+// function buyacar(){
+// return new Promise((res,rej)=>{
+//     setTimeout(()=>{
+//         res('Buy a car')
+//         },5000)
+// })
+    
+// }
+
+// function planatrip(){
+//     return new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//         res('Plan trip to manali')
+//         },2000)
+//     })
+
+// }
+
+// function raechmanali(){
+//     return new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             res('Reached manali')
+//              },1000)
+//     })
+    
+// }
+
+// buyacar().then((msg1)=>{
+//   console.log(msg1);
+//   planatrip().then((msg2)=>{
+//     console.log(msg2);
+//     raechmanali().then((msg3)=>{
+//         console.log(msg3)
+//     })
+//   })
+// })
+
+
+//Promise has solved the problem of call back hell but the code look very ugly so 
+//now introduced async await 
+
+function buyacar(){
+return new Promise((res,rej)=>{
+    setTimeout(()=>{
+        res('Buy a car')
+        },5000)
+})
+    
+}
+
+function planatrip(){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+        res('Plan trip to manali')
+        },2000)
+    })
+
+}
+
+function raechmanali(){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res('Reached manali')
+             },1000)
+    })
+    
+}
+
+
+async function fun1(){
+    const msg1=await buyacar();
+    console.log(msg1)
+
+    const msg2=await planatrip();
+    console.log(msg2)
+
+
+    const msg3=await raechmanali();
+    console.log(msg3)
+}
+fun1()
 
 
 
