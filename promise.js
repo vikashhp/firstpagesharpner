@@ -381,3 +381,79 @@
 //   })
 // })
 
+// promises are asynchrounous
+// promises may be resolve or it may be rejected
+
+    // async function dad(){
+
+    //     try{
+    //         const dadpromise= await new Promise((resolve,reject)=>{
+    //             setTimeout(()=>{
+    //             let dadsalary=10000;
+    //             let gamecost=40000;
+    //             let salarycredited=true;
+    //             if(salarycredited==true && dadsalary>gamecost){
+    //                 resolve('Wow! Dad will buy you the game')
+    //             }else{
+    //                 reject('Sorry your dad salary is too low to buy this game')
+    //             } 
+    //             },3000)
+    //         })
+        
+    //         console.log(dadpromise)
+    //     }catch(err){
+    //         console.log(err)
+    //     }  
+    // }
+
+
+    // dad()   
+
+    //await is not working because it is not having any promise
+//   async function calling(){
+//     console.log('a');
+//     console.log('b');
+//    await setTimeout(()=>{
+//         console.log('buying a game')
+//     },1000);
+//    await  setTimeout(()=>{
+//         console.log('booting the game')
+//     },3000);
+
+//     console.log('playing')
+//   }
+//   calling()
+
+
+
+
+// await only works with promise 
+
+// async function calling(){
+//     console.log('a');
+//     console.log('b');
+
+//     const msg= await new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//         res('Buying a game')
+//         },3000)
+//     })
+//     console.log(msg)
+
+//     const msg2= await new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//        res('Booting the game')
+//         },5000)
+//     })
+//     console.log(msg2)
+
+//     console.log('playing')
+// }
+// calling()
+
+
+
+
+
+
+
