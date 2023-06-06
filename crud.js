@@ -5,6 +5,25 @@ btn.addEventListener('submit',storedata)
 let arr=JSON.parse(localStorage.getItem('data'))||[]
 let main_div=document.getElementById('display');
 
+window.addEventListener('DOMContentLoaded',()=>{
+
+    axios.get("https://crudcrud.com/api/936b58827b324ec2bab30d628ba71273/studentdata")
+    .then((res)=>{
+        for(let i=0;i<res.data.length;i++){
+            showinscreen(res.data[i])
+        }
+        
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+
+
+})
+
+
+
+
 function storedata(e)
 {
     e.preventDefault();
@@ -30,15 +49,6 @@ function storedata(e)
     .catch((err)=>{
         console.log(err)
     })
-
-    
-
-
-
-   
-    
-    // console.log(return_data)
-
 
 }
 
