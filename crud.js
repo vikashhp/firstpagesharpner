@@ -68,6 +68,7 @@ function showinscreen(data){
       const parent=document.getElementById('display')
       const childhtml=`<li id=${data._id}>${data.name}-${data.email}-${data.phone}
                        <button onclick=deleteUser('${data._id}')>Delete</button>
+                       <button onclick=EditUser('${data.name}','${data.email}','${data.phone}','${data._id}')>Edit</button>
       </li>`
 
       parent.innerHTML=parent.innerHTML+childhtml;
@@ -102,6 +103,14 @@ function removeuserfromscreen(userId){
         main_div.removeChild(child)
     }
 
+}
+
+function EditUser(name,email,phone,userId){
+    document.getElementById('name').value=name;
+    document.getElementById('email').value=email;
+    document.getElementById('number').value=phone;
+
+    deleteUser(userId)
 }
 
 
