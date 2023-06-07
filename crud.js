@@ -47,7 +47,7 @@ function storedata(e)
 
     axios.post("https://crudcrud.com/api/fbcd9888cf7041f8a56cfa8914db62ca/studentdata",obj)
     .then((res)=>{
-        console.log(res)
+        // console.log(res)
         showinscreen(res.data)
     })
     .catch((err)=>{
