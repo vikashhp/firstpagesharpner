@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Revision</h1>
+</body>
+</html>
+<script>
+
+//   Hoisting 
+
+// console.log(x);//undefined
+// js()//chunnu;
+// console.log(js)//whole function
+
+// var x=10;
+// function js(){
+//     console.log('Chunnu')
+// }
+
+// console.log(x);//10
+// js()//chunnu;
+// console.log(js)//whole function
+
+//Q1=> var a=3;
+
+// function printname(name)
+// {
+//     console.log(name)//vikash
+// }
+
+// printname('Vikash');
+// console.log(a)//3
+
+
+
+// Q2=>
+
+
+// printname('Vikash');
+// console.log(a)//undefined
+
+// var a=3;
+
+// function printname(name)
+// {
+//     console.log(name)//vikash
+// }
+
+// ans=>vikash then undefind
+
+// Q3=>
+// console.log(printName());//printname is not a function beacuse print name is act as variable
+// console.log(a);//undefined
+// var a = 3;
+// var printName = (name) => {
+// console.log(name)
+// }
+
+
+// Q4=>
+// console.log(printName);//undefined
+// console.log(a);//undefined
+// var a = 3;
+// var printName = (name) => {
+// console.log(name)
+// }
+
+// Window Object
+// Q1=>
+// var a=2;
+// var c=2;
+
+
+// function b(){
+//     var x=2;
+//     var c=4;
+//     console.log(c)//4
+// }
+// console.log(c)//2
+// // b()
+
+// console.log(a);//2
+
+// console.log(this.a);//2
+
+// console.log(this.c)//2
+
+// console.log(this.x)//undefined
+
+// console.log(window.a)//2
+
+// console.log(window.x)//undefined
+
+// console.log(b());//undefined
+
+// Q2=>
+
+// function abc(){
+//     console.log(a)//7
+// }
+
+// var a=7;
+// abc()
+
+// Q3=>
+
+// function abc(){
+//     console.log(a)//undefined
+// }
+
+
+// abc()
+// var a=7;
+
+// Q4=>
+
+// function outerfun(){
+//     console.log(a);//7
+//     var c=10;
+
+//     innerfun();
+
+//     function innerfun(){
+//         console.log(b);//3
+//         console.log(c)//10
+//     }
+
+// }
+
+// var a=7;
+// var b=3;
+
+// outerfun()
+
+// Q5=>
+   
+// function outerfun(){
+//     console.log(a);//undefined
+//     var a=10;
+
+//     innerfun();
+
+//     function innerfun(){
+//         console.log(a);//10
+//         console.log(window.a);//7
+//         console.log(this.a)//7
+//     }
+
+// }
+
+// var a=7;
+// var b=3;
+
+// outerfun()
+
+//Let ,var and Const 
+
+// Q1=>
+//   console.log(a);//a before initillization because of let no code is executed after this
+//   console.log(b);
+//   let a=5;
+//   var b=10;
+//   console.log(b)
+
+
+// Q2=>
+
+// Type error
+// const b=100;
+// b=10;
+// console.log(b)
+
+
+// reference error/
+// console.log(a);//
+
+
+// SyntaxError
+// const b;
+// b=10;
+// console.log(b)
+
+// Q3=>
+
+// console.log(a);//undefined 
+// var a=10;
+// console.log(b)//Reference Error
+
+// Q4=>
+
+// let a=5;
+// var b=10;
+
+// console.log(this.a)//undefined
+// console.log(window.a);//undefined
+
+// console.log(this.b)//10
+// console.log(window.b);//10
+
+// Q5=>
+
+// let a=5;
+// let a=6
+// ans=>Syntax error
+
+
+// closure
+ 
+// Q1=>
+// console.log('a');
+// console.log('b');
+// setTimeout(()=>{
+//     console.log('c')
+// },2000)
+// console.log('d')
+
+// Q2=>
+
+// console.log('a');
+// console.log('b');
+// setTimeout(()=>{
+//     console.log('c')
+// },2000);
+
+// setTimeout(()=>{
+//     console.log('d')
+// },0);
+
+// console.log('e')
+
+// Q3=>
+// Foreach and Map
+
+// var arr=[1,2,3,4,5];
+// let new_arr=arr.forEach((ele)=>{
+//     // console.log(ele)
+//     return ele
+// })
+
+// console.log(new_arr)//undefined
+
+// let arr=[1,2,3,4,5];
+
+// let new_arr=arr.map((ele)=>{
+//     return ele
+// })
+// console.log(new_arr)//12345
+
+// Block scope and Shadowing in JS
+
+// Q1=>
+
+// var a=30;
+// {
+//     var a=0;
+//     let b=10;
+//     let c=15;
+// }
+
+// console.log(a)//0
+
+
+// Q2=>
+// const a=10;
+
+// {
+//     var a=20;
+
+// }
+// console.log(a)//error
+
+// Q3=>
+// let a=10;
+// {
+//     var a=20;
+
+// }
+// console.log(a)//error
+
+// Q4=>
+
+// var a=10;
+// {
+//     let a=20;
+// }
+
+// console.log(a)//10
+
+// Q5=>
+
+// var a=10;
+// function fun(){
+//     var a=20;
+
+// }
+// fun();
+// console.log(a)//10
+
+//Closure(very Important)
+
+// function x(){
+//     let a=20;
+//     function y(){
+//         console.log(a)
+//     }
+//     y()
+// }
+// x()
+
+// # Searched for a in its lexical enviorment 
+
+// Q2=>
+// function x(){
+//     let a=20;
+//     function y(){
+//         return a;
+//     }
+//     console.log(y())
+// }
+// x()
+
+// Q3=>
+
+// function x(){
+//     let a=10;
+//     function y(){
+//         console.log(a)
+//     }
+//     return y
+// }
+
+// console.log(x())
+
+// Q4=>
+
+
+// function x(){
+//     let a=10;
+//     function y(){
+//         console.log(a)
+//     }
+//     return y
+// }
+
+// const z=x();
+// console.log(z())
+
+
+// Q5=>
+
+// function x(){
+//     let a=10;
+//     function y(){
+//         console.log(a)
+//     }
+//     a=50;
+//     return y
+// }
+
+// const z=x();
+// console.log(z())
+
+
+// call, apply and bind
+
+// Q1=>
+
+// var obj={
+//     val:100
+// }
+// function fun(){
+//     console.log(this.val)//undefined
+// }
+// fun()
+
+// Q2=>
+
+// var obj={
+//     val:100
+// }
+// function fun(){
+//     console.log(this.val)//100
+// }
+// fun.call(obj)
+
+// Q3=>
+
+// var obj={
+//     val:100
+// }
+// function fun(a){
+//     console.log(this.val+a)//103
+// }
+// fun.call(obj,3)
+
+// Q4=>
+
+// var obj={
+//     val:100
+// }
+// function fun(a,b,c){
+//     console.log(this.val+a+b+c)//
+// }
+// fun.apply(obj,[3,4,5])
+
+// Advanced closure
+
+// function y(){
+//     for(var i=1;i<6;i++){
+//         setTimeout(()=>{
+//             console.log(i)
+//         },i*1000)
+//         console.log('Done coding')
+//     }
+// }
+// y()
+
+//Done coding 66666
+
+
+
+// function y(){
+//     for(let i=1;i<6;i++){
+//         setTimeout(()=>{
+//             console.log(i)
+//         },i*1000)
+//         console.log('Done coding')
+//     }
+// }
+// y()
+//Done coding 12345
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
