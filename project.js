@@ -46,16 +46,17 @@ function adddata(e){
 
     //EDIT BUTTON
     
-    let editbtn=document.createElement('button');
-        editbtn.innerText='Edit';
-        editbtn.className='edit';
-        editbtn.style.backgroundColor='blue';
-        editbtn.style.color='white'
+    // let editbtn=document.createElement('button');
+    //     editbtn.innerText='Edit';
+    //     editbtn.className='edit';
+    //     editbtn.style.backgroundColor='blue';
+    //     editbtn.style.color='white';
+    //     editbtn.addEventListener('click',edititem)
         
 
 
     let row=document.createElement('tr');
-    row.append(td1,td2,td3,deletebtn,editbtn)
+    row.append(td1,td2,td3,deletebtn)
 
     document.querySelector('tbody').append(row)
     
@@ -63,6 +64,24 @@ function adddata(e){
 }
 
 function deleteitem(e){
-    e.target.parentNode.remove()  
+
+    e.target.parentNode.remove()
+
 }
+
+// function edititem(e){
+ 
+
+//     document.getElementById('name').innerHTML=document.getElementById('name').value;
+//     document.getElementById('description').innerHTML=document.getElementById('description').value;
+//     document.querySelector('#dept').innerHTML=document.getElementById('#dept').value;
+  
+
+    
+
+
+
+// }
+
+
 

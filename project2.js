@@ -9,41 +9,29 @@ btn.addEventListener('submit',storedata);
 
 
 
-window.addEventListener('DOMContentLoaded',()=>{
+window.addEventListener('DOMContentLoaded',async ()=>{
 
 
-    axios.get('https://crudcrud.com/api/616614b18e074d27a5b3ac03ffaba248/sellerdata')
-    .then((res)=>{
-         
+   const res=await axios.get('https://crudcrud.com/api/05bead4bb26c492690a9dd4b47d66f03/sellerdata')
+
+    try{
+        console.log(res.data)
         for(let i=0;i<res.data.length;i++){
-            showinscreen(res.data[i])
-        }
-       
-       
- let sum=res.data.reduce(function(acc,el){
-    return acc+Number(el.price)
-   },0)
+                 showinscreen(res.data[i])
+       }
 
+     let sum=res.data.reduce(function(acc,el){
+     return acc+Number(el.price)
+    },0)
 
-  document.getElementById('total').innerHTML=`Total price is ${sum}`
+    
+       document.getElementById('total').innerHTML=`Total price is ${sum}`
 
-        
-        
-     
-       
-
-
-       
-    })
-    .catch((err)=>{
+                   
+    }
+    catch(err){
         console.log(err)
-    })
-
-
-
-
-
-
+    }
 
 })
 
@@ -53,13 +41,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 
 
-function storedata(e){
+ async function storedata(e){
     e.preventDefault();
-
-
-
-   
-    
     let price=document.getElementById('price').value;
     let proname=document.getElementById('proname').value;
 
@@ -68,21 +51,20 @@ function storedata(e){
      }
    
 
-     axios.post('https://crudcrud.com/api/616614b18e074d27a5b3ac03ffaba248/sellerdata',obj)
-     .then((res)=>{
-        console.log(res.data)
-        showinscreen(res.data)
-     })
-     .catch((err)=>{
+    let post1=await axios.post('https://crudcrud.com/api/05bead4bb26c492690a9dd4b47d66f03/sellerdata',obj)
+    //  .then((res)=>{
+    //     console.log(res.data)
+    //     showinscreen(res.data)
+    //  })
+    try{
+        console.log(post1.data)
+        showinscreen(post1.data)
+    }
+    catch(err){
         console.log(err)
-     })
+    }
 
     
-       
-
-
-
-
 
 
 }
@@ -104,17 +86,28 @@ function showinscreen(data){
 
 }
 
-function deletedata(dataId){
+async function deletedata(dataId){
 
-    axios.delete(`https://crudcrud.com/api/616614b18e074d27a5b3ac03ffaba248/sellerdata/${dataId}`)
-    .then(()=>{
+   await axios.delete(`https://crudcrud.com/api/05bead4bb26c492690a9dd4b47d66f03/sellerdata/${dataId}`)
+    // .then(()=>{
+    //     removeproduct(dataId)
+    // })
+    // .catch((err)=>{
+    //     console.log(err)
+    // })
+
+    try{
+        // console.log(post1.data)
         removeproduct(dataId)
-    })
-    .catch((err)=>{
+    }
+    catch(err){
         console.log(err)
-    })
+    }
+
 
 }
+
+
 
 function removeproduct(dataId){
 
@@ -124,10 +117,6 @@ function removeproduct(dataId){
     if(child){
         main_div.removeChild(child)
     }
-
-    
-       
-
 }
 
 
