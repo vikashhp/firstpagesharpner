@@ -12,21 +12,21 @@ btn.addEventListener('submit',storedata);
 window.addEventListener('DOMContentLoaded',async ()=>{
 
 
-   const res=await axios.get('https://crudcrud.com/api/05bead4bb26c492690a9dd4b47d66f03/sellerdata')
+   const res=await axios.get('https://crudcrud.com/api/20572aac196945ecbe855b115acfd851/sellerdata')
 
     try{
         console.log(res.data)
+
         for(let i=0;i<res.data.length;i++){
                  showinscreen(res.data[i])
-       }
+         }
 
-     let sum=res.data.reduce(function(acc,el){
-     return acc+Number(el.price)
-    },0)
+       let sum=res.data.reduce(function(acc,el){
+        return acc+Number(el.price)
+       },0)
 
     
        document.getElementById('total').innerHTML=`Total price is ${sum}`
-
                    
     }
     catch(err){
@@ -51,13 +51,13 @@ window.addEventListener('DOMContentLoaded',async ()=>{
      }
    
 
-    let post1=await axios.post('https://crudcrud.com/api/05bead4bb26c492690a9dd4b47d66f03/sellerdata',obj)
+    let post1=await axios.post('https://crudcrud.com/api/20572aac196945ecbe855b115acfd851/sellerdata',obj)
     //  .then((res)=>{
     //     console.log(res.data)
     //     showinscreen(res.data)
     //  })
     try{
-        console.log(post1.data)
+        // console.log(post1.data)
         showinscreen(post1.data)
     }
     catch(err){
@@ -88,7 +88,7 @@ function showinscreen(data){
 
 async function deletedata(dataId){
 
-   await axios.delete(`https://crudcrud.com/api/05bead4bb26c492690a9dd4b47d66f03/sellerdata/${dataId}`)
+   await axios.delete(`https://crudcrud.com/api/20572aac196945ecbe855b115acfd851/sellerdata/${dataId}`)
     // .then(()=>{
     //     removeproduct(dataId)
     // })

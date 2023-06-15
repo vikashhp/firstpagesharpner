@@ -538,7 +538,7 @@ function planatrip(){
     return new Promise((res,rej)=>{
         setTimeout(()=>{
         res('Plan trip to manali')
-        },2000)
+        },6000)
     })
 
 }
@@ -547,7 +547,7 @@ function raechmanali(){
     return new Promise((res,rej)=>{
         setTimeout(()=>{
             res('Reached manali')
-             },1000)
+             },10000)
     })
     
 }
