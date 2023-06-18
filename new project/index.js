@@ -140,9 +140,6 @@ async function deletedata(data,category){
 
 function removedata(data,category){
 
-    
-   
-  
 
     if(category==='Food'){
      let parent=document.getElementById('food');
